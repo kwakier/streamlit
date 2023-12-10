@@ -14,7 +14,7 @@ rd = conn.read(
     usecols=[0]
     )
 
-cnt = rd.count(usecols=[0])
+cnt = rd.count()
 st.write(f"Mamy {cnt} HotWheelsów")
 
 #Print results (simple).
@@ -25,6 +25,8 @@ st.write(f"Mamy {cnt} HotWheelsów")
 df = pd.DataFrame(rd, columns = ['id'])
 dfl = df['id'].str.lower()
 
+cnt2 = df.count()
+st.write(f"Mamy {cnt2} HotWheelsów")
 
 #st.write(dfl)
 st.write(df)
