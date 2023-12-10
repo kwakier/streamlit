@@ -14,11 +14,8 @@ rd = conn.read(
     usecols=[0]
     )
 
-res = []
-for val in rd:
-    if val != None :
-        res.append(val)
-st.write(res)
+res = list(filter(lambda item: item is not None, rd))
+
 cnt = len(res)
 st.write(cnt)
 st.write(f"Mamy {cnt} HotWheelsów")
