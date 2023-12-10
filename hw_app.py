@@ -1,6 +1,9 @@
 import pandas as pd
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
+#st.cache(persist=True, allow_output_mutation=True)
+
+#st.file_uploader(type=None, accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False)
 
 # Create a connection object.
 url = "https://docs.google.com/spreadsheets/d/1yi769GiV0MsO2hHCJHhQJaIL96_3wu955LZxo79hOkU/edit?pli=1#gid=0"
@@ -14,9 +17,8 @@ rd = conn.read(
     usecols=[0]
     )
 
-#cnt = rd.count()
-#st.write(cnt)
-#st.write(f"Mamy {cnt} HotWheelsów")
+cnt = rd.count()
+st.write(cnt)
 
 #Print results (simple).
 #for row in rd.itertuples():
@@ -25,6 +27,7 @@ rd = conn.read(
 #Print results (pretty).
 df = pd.DataFrame(rd, columns = ['id'])
 dfl = df['id'].str.lower()
+
 
 #st.write(dfl)
 st.write(df)
