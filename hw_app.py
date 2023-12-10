@@ -12,9 +12,10 @@ rd = conn.read(
     worksheet="Arkusz1",
     ttl="10m",
     usecols=[0]
-    )
+    ).notnone()
 
-cnt = len(rd)
+res = [i for i in rd if i is not None]
+cnt = len(res)
 st.write(cnt)
 st.write(f"Mamy {cnt} HotWheelsów")
 
