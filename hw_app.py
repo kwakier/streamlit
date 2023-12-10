@@ -16,7 +16,7 @@ rd = conn.read(
     ttl="10m",
     usecols=[0]
     )
-st.image(hwlogo.png)
+st.image('hwlogo.png')
 cnt = rd.count()
 st.write(cnt)
 
