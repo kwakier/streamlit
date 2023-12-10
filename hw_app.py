@@ -13,6 +13,7 @@ rd = conn.read(
     ttl="10m",
     usecols=[0]
     )
+
 cnt = rd.count()
 st.write(cnt)
 st.write(f"Mamy {cnt} HotWheelsów")
