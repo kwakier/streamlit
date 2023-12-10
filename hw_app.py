@@ -14,7 +14,7 @@ rd = conn.read(
     usecols=[0]
     )
 
-cnt = rd.len()
+cnt = len(rd)
 st.write(cnt)
 st.write(f"Mamy {cnt} HotWheelsów")
 
