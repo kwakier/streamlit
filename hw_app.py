@@ -29,7 +29,7 @@ st.write(cnt)
 #    st.write(f"{row.id}")
 
 #Print results (pretty).
-df = pd.unique(pd.DataFrame.unique(rd, columns = ['id']))
+df = pd.unique(pd.DataFrame(rd, columns = ['id']))
 dfl = df['id'].str.lower()
 
 ti = st.text_input(label='szukaj')
