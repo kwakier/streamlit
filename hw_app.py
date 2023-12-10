@@ -12,7 +12,7 @@ rd = conn.read(
     worksheet="Arkusz1",
     ttl="10m",
     usecols=[0]
-    ).notnone()
+    )
 
 res = [i for i in rd if i is not None]
 cnt = len(res)
