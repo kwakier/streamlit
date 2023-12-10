@@ -1,9 +1,6 @@
 import pandas as pd
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
-#st.cache(persist=True, allow_output_mutation=True)
-
-#st.file_uploader(type=None, accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False)
 
 # Create a connection object.
 url = "https://docs.google.com/spreadsheets/d/1yi769GiV0MsO2hHCJHhQJaIL96_3wu955LZxo79hOkU/edit?pli=1#gid=0"
@@ -18,7 +15,7 @@ rd = conn.read(
     )
 
 cnt = rd.count()
-st.write(cnt)
+print("Mamy +cnt HotWheelsów")
 
 #Print results (simple).
 #for row in rd.itertuples():
