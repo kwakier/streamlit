@@ -1,6 +1,10 @@
 import pandas as pd
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
+
+pi = st.image('hwlogo.png')
+st.set_page_config(page_title="HW collection", page_icon=pi)
+
 #st.cache(persist=True, allow_output_mutation=True)
 
 #st.file_uploader(type=None, accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False)
@@ -16,7 +20,7 @@ rd = conn.read(
     ttl="10m",
     usecols=[0]
     )
-st.image('hwlogo.png')
+
 cnt = rd.count()
 st.write(cnt)
 
