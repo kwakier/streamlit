@@ -14,9 +14,9 @@ rd = conn.read(
     usecols=[0]
     )
 
-cnt = rd.count()
-st.write(cnt)
-st.write(f"Mamy {cnt} HotWheelsów")
+#cnt = rd.count()
+#st.write(cnt)
+#st.write(f"Mamy {cnt} HotWheelsów")
 
 #Print results (simple).
 #for row in rd.itertuples():
