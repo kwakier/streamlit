@@ -32,10 +32,6 @@ st.write(cnt)
 df = pd.DataFrame(rd, columns = ['id'])
 dfl = df['id'].str.lower()
 
-
-#st.write(dfl)
-st.write(df)
-
 ti = st.text_input(label='szukaj')
 til = ti.lower()
 
@@ -44,3 +40,6 @@ if til is not None :
         st.write("Mamy go") 
     else: 
         st.write("Kupujemy!")
+
+#st.write(dfl)
+st.write(df)
