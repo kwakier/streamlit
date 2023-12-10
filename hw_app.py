@@ -15,7 +15,7 @@ rd = conn.read(
     )
 
 res = list(filter(lambda item: item is not None, rd))
-
+st.write(res)
 cnt = len(res)
 st.write(cnt)
 st.write(f"Mamy {cnt} HotWheelsów")
