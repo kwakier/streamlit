@@ -30,9 +30,7 @@ st.write(cnt)
 
 #Print results (pretty).
 df = pd.DataFrame(rd, columns = ['id'])
-dfl = df['id'].str.lower()
-
-cnt = dfl.unique().count()
+dfl = df['id'].str.lower().unique()
 
 ti = st.text_input(label='szukaj')
 til = ti.lower()
