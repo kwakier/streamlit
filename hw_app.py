@@ -14,7 +14,10 @@ rd = conn.read(
     usecols=[0]
     )
 
-res = [i for i in rd if i is not None]
+res = []
+for val in rd:
+    if val != None :
+        res.append(val)
 st.write(res)
 cnt = len(res)
 st.write(cnt)
