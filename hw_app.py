@@ -2,8 +2,8 @@ import pandas as pd
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 
-pi = st.image('hwlogo.png')
-st.set_page_config(page_title="HW collection", page_icon=pi)
+#pi = st.image('hwlogo.png')
+st.set_page_config(page_title="HW collection", page_icon='hwlogo.png')
 
 #st.cache(persist=True, allow_output_mutation=True)
 
