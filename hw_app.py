@@ -15,6 +15,7 @@ rd = conn.read(
     )
 
 res = [i for i in rd if i is not None]
+st.write(res)
 cnt = len(res)
 st.write(cnt)
 st.write(f"Mamy {cnt} HotWheelsów")
