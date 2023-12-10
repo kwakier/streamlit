@@ -15,7 +15,7 @@ rd = conn.read(
     )
 
 cnt = rd.count()
-print("Mamy +cnt HotWheelsów")
+print(f"Mamy +cnt HotWheelsów")
 
 #Print results (simple).
 #for row in rd.itertuples():
