@@ -32,6 +32,8 @@ st.write(cnt)
 df = pd.DataFrame(rd, columns = ['id'])
 dfl = df['id'].str.lower()
 
+cnt = len(dfl).unique()
+
 ti = st.text_input(label='szukaj')
 til = ti.lower()
 
@@ -43,3 +45,4 @@ if til is not None :
 
 #st.write(dfl)
 st.write(df)
+st.write(cnt)
