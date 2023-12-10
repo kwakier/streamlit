@@ -14,7 +14,7 @@ rd = conn.read(
     usecols=[0]
     )
 
-cnt = rd.count()
+cnt = rd.count(usecols=[0])
 st.write(f"Mamy {cnt} HotWheelsów")
 
 #Print results (simple).
