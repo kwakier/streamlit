@@ -20,7 +20,7 @@ gc = gspread.service_account_from_dict(credentials)
 
 sh = gc.open_by_key('1KAAiqjpM0FdQ7MaoLJXumxzccL5ddjedPS2tt29n21A')
 
-rd = sh.sheet1.get('A1')
+rd = sh.sheet1.get_all_values()
 pd.DataFrame(rd, columns = ['id'])
 
-#st.write(sh.sheet1.get('A1'))
+st.write(rd)
