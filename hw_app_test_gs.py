@@ -1,5 +1,6 @@
 import gspread
 import streamlit as st
+import pandas as pd
 
 credentials = {
     "type": "service_account",
