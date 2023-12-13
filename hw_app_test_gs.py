@@ -1,4 +1,5 @@
 import gspread
+import streamlit as st
 
 credentials = {
     "type": "service_account",
@@ -18,4 +19,4 @@ gc = gspread.service_account_from_dict(credentials)
 
 sh = gc.open_by_key('1KAAiqjpM0FdQ7MaoLJXumxzccL5ddjedPS2tt29n21A')
 
-print(sh.sheet1.get('A1'))
+st.write(sh.sheet1.get('A1'))
