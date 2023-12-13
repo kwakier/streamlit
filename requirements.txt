@@ -1,3 +1,4 @@
 pandas
 streamlit
 git+https://github.com/streamlit/gsheets-connection
+gspread
