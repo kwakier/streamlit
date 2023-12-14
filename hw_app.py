@@ -22,7 +22,7 @@ sh = gc.open_by_key('1yi769GiV0MsO2hHCJHhQJaIL96_3wu955LZxo79hOkU')
 
 rd = sh.sheet1.get_all_records()
 
-df = pd.DataFrame(rd, columns = ['id'])
+df = pd.DataFrame(rd, columns = ['id','year'])
 dfl = df['id'].str.lower()
 
 def cnt():
