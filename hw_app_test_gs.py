@@ -45,7 +45,7 @@ dodaj_hw = st.button("Dodaj")
 if dodaj_hw:
     sh.sheet1.update_cell(cnt()+2,1, ti)
 
-refresh = st.button("Odswiez")   
+refresh = st.button("Odswiez")
 if refresh:
     cnt()
 
