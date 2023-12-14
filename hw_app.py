@@ -43,10 +43,10 @@ if til is not None :
     if til in dfl.values: 
         st.write("Mamy go") 
     else: 
-        ro = st.text_input(label='rocznik')
-        dodaj_hw = st.button("Dodaj")
         st.write("Kupujemy!")
 
+ro = st.text_input(label='rocznik')
+dodaj_hw = st.button("Dodaj")
 
 if dodaj_hw:
     sh.sheet1.update_cell(cnt()+1,1, ti)
