@@ -34,7 +34,7 @@ cnt()
 
 #costam = np.unique(df, return_counts=True)
 
-st.write(f"Mamy **{cnt()}** samochodzików")
+st.write(f"Mamy **{cnt()-1}** samochodzików")
 
 ti = st.text_input(label='szukaj')
 til = ti.lower()
@@ -47,7 +47,7 @@ if til is not None :
 
 dodaj_hw = st.button("Dodaj")
 if dodaj_hw:
-    sh.sheet1.update_cell(cnt()+2,1, ti)
+    sh.sheet1.update_cell(cnt()+1,1, ti)
 
 refresh = st.button("Odswiez")   
 if refresh:
