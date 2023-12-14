@@ -18,9 +18,35 @@ credentials = {
 
 gc = gspread.service_account_from_dict(credentials)
 
-sh = gc.open_by_key('1KAAiqjpM0FdQ7MaoLJXumxzccL5ddjedPS2tt29n21A')
+sh = gc.open_by_key('1yi769GiV0MsO2hHCJHhQJaIL96_3wu955LZxo79hOkU')
 
 rd = sh.sheet1.get_all_records()
-dataframe = pd.DataFrame(rd)
 
-st.write(dataframe)
+df = pd.DataFrame(rd, columns = ['id'])
+dfl = df['id'].str.lower()
+
+def cnt():
+    cnt = int(df.count())
+    return cnt
+cnt()
+
+st.write(f"Mamy **{cnt()}** samochodzików")
+
+ti = st.text_input(label='szukaj')
+til = ti.lower()
+
+if til is not None :
+    if til in dfl.values: 
+        st.write("Mamy go") 
+    else: 
+        st.write("Kupujemy!")
+
+dodaj_hw = st.button("Dodaj")
+if dodaj_hw:
+    sh.sheet1.update_cell(cnt()+2,1, ti)
+
+refresh = st.button("Odswiez")   
+if refresh:
+    cnt()
+
+st.write(df)
