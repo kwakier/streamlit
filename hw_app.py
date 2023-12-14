@@ -1,6 +1,8 @@
 import gspread
 import streamlit as st
 import pandas as pd
+import numpy as np
+from collections import Counter
 
 credentials = {
     "type": "service_account",
@@ -26,9 +28,11 @@ df = pd.DataFrame(rd, columns = ['id','year'])
 dfl = df['id'].str.lower()
 
 def cnt():
-    cnt = int(len(set(df['id']))-1)
+    cnt = int(len(set(df['id'])))
     return cnt
 cnt()
+
+#costam = np.unique(df, return_counts=True)
 
 st.write(f"Mamy **{cnt()}** samochodzików")
 
@@ -43,10 +47,20 @@ if til is not None :
 
 dodaj_hw = st.button("Dodaj")
 if dodaj_hw:
-    sh.sheet1.update_cell(cnt()+1,1, ti)
+    sh.sheet1.update_cell(cnt()+2,1, ti)
 
-refresh = st.button("Odswiez")
+refresh = st.button("Odswiez")   
 if refresh:
     cnt()
 
-st.write(df)
+dfy = df['year']
+
+#cl = Counter(dfy).keys() # equals to list(set(words))
+#cv = Counter(dfy).values() # counts the elements' frequency
+
+cl = Counter(dfy)
+
+cldf = pd.DataFrame.from_dict(cl, orient='index').reset_index()
+cldf
+
+df
