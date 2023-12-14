@@ -26,7 +26,7 @@ df = pd.DataFrame(rd, columns = ['id'])
 dfl = df['id'].str.lower()
 
 def cnt():
-    cnt = int(len(df))
+    cnt = int(len(set(df)))
     return cnt
 cnt()
 
