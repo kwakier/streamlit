@@ -26,7 +26,7 @@ df = pd.DataFrame(rd, columns = ['id'])
 dfl = df['id'].str.lower()
 
 def cnt():
-    cnt = int(len(set(df['id'])))
+    cnt = int(len(set(df['id']))-1)
     return cnt
 cnt()
 
@@ -43,7 +43,7 @@ if til is not None :
 
 dodaj_hw = st.button("Dodaj")
 if dodaj_hw:
-    sh.sheet1.update_cell(cnt()+2,1, ti)
+    sh.sheet1.update_cell(cnt()+1,1, ti)
 
 refresh = st.button("Odswiez")
 if refresh:
