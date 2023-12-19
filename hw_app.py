@@ -66,6 +66,6 @@ dfy = df['year']
 cl = Counter(dfy)
 
 cldf = pd.DataFrame.from_dict(cl, orient='index').reset_index()
-cldf
+#cldf
 
 df
