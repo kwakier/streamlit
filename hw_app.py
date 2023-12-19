@@ -25,7 +25,7 @@ sh = gc.open_by_key('1yi769GiV0MsO2hHCJHhQJaIL96_3wu955LZxo79hOkU')
 rd = sh.sheet1.get_all_records()
 
 df = pd.DataFrame(rd, columns = ['id','year'])
-dfl = df['id'].str.lower()
+dfl = df['id'].str.lower().str[0:5]
 
 def cnt():
     cnt = int(len(set(df['id'])))
@@ -42,6 +42,7 @@ til = ti.lower()
 if til is not None :
     if til in dfl.values: 
         st.write("Mamy go") 
+        st.write(df.loc[df['id'].str.lower().str[0:5] == til ])
     else:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
