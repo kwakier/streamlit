@@ -40,14 +40,13 @@ st.write(f"Mamy **{cnt()}** samochodzików")
 ti = st.text_input(label='szukaj')
 til = ti.lower()
 
-if til is not None :
+if ti:
     if til in dfl.values: 
         st.write("Mamy go") 
         st.write(df.loc[df['id'].str.lower().str[0:5] == til ])
-    else:
+    elif til not in dfl.values:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
-        
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
