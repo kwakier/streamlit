@@ -51,16 +51,16 @@ if ti:
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
             sh.sheet1.update_cell(cnt()+2,2, ro)
-            break
+           
 else:
     st.write("Sprawdźmy")
-#refresh = st.button("Odswiez")   
-#if refresh:
-#   cnt()
+    
+refresh = st.button("Odswiez")   
+if refresh:
+    cnt()
 
 dfy = df['year']
 #dfy = filter(None,df['year'])
-
 
 #cl = Counter(dfy).keys() # equals to list(set(words))
 #cv = Counter(dfy).values() # counts the elements' frequency
