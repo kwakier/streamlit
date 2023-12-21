@@ -28,7 +28,8 @@ df = pd.DataFrame(rd, columns = ['id','year'])
 dfl = df['id'].str.lower().str[0:5]
 
 def cnt():
-    cnt = int(len(set(df['id'])))
+    #cnt = int(len(set(df['id'])))
+    cnt = int(len((df['id']))
     return cnt
 cnt()
 
