@@ -34,7 +34,7 @@ cnt()
 
 #costam = np.unique(df, return_counts=True)
 
-st.write(f"Mamy **{cnt()-1}** samochodzików")
+st.write(f"Mamy **{cnt()}** samochodzików")
 
 ti = st.text_input(label='szukaj')
 til = ti.lower()
