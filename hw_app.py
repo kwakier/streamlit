@@ -44,7 +44,7 @@ if ti:
     if til in dfl.values: 
         st.write("Mamy go") 
         st.write(df.loc[df['id'].str.lower().str[0:5] == til ])
-    elif til not in dfl.values:
+    else:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
         dodaj_hw = st.button("Dodaj")
