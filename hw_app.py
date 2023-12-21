@@ -48,10 +48,10 @@ if til is not None :
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
         
-    dodaj_hw = st.button("Dodaj")
-    if dodaj_hw:
-        sh.sheet1.update_cell(cnt()+2,1, ti)
-        sh.sheet1.update_cell(cnt()+2,2, ro)
+        dodaj_hw = st.button("Dodaj")
+        if dodaj_hw:
+            sh.sheet1.update_cell(cnt()+2,1, ti)
+            sh.sheet1.update_cell(cnt()+2,2, ro)
         
 refresh = st.button("Odswiez")   
 if refresh:
