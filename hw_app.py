@@ -52,7 +52,8 @@ if til is not None :
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
             sh.sheet1.update_cell(cnt()+2,2, ro)
-        
+else:
+    st.write("Sprawdźmy")
 refresh = st.button("Odswiez")   
 if refresh:
     cnt()
