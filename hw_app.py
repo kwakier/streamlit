@@ -2,6 +2,7 @@ import gspread
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
 from collections import Counter
 
 credentials = {
@@ -51,6 +52,7 @@ if ti:
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
             sh.sheet1.update_cell(cnt()+2,2, ro)
+            time.sleep(3)
             cnt()
 else:
     st.write("Sprawdźmy")
