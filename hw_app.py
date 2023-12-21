@@ -51,11 +51,12 @@ if ti:
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
             sh.sheet1.update_cell(cnt()+2,2, ro)
+            cnt()
 else:
     st.write("Sprawdźmy")
-refresh = st.button("Odswiez")   
-if refresh:
-    cnt()
+#refresh = st.button("Odswiez")   
+#if refresh:
+#   cnt()
 
 dfy = df['year']
 #dfy = filter(None,df['year'])
