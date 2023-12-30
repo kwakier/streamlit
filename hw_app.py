@@ -47,12 +47,12 @@ if ti:
     else:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
-        options = list(set(df['marka']))
+        options = set(df['marka'])
         ma = st.selectbox('marka',options)
         if ma == "Dodaj":
             dodmar = st.text_input("Nowa marka")
         else:
-            dodmar = ma            
+            dodmar = ma
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+3,1, ti)
