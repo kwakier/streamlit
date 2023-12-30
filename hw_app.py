@@ -34,9 +34,16 @@ def cnt():
     return cnt
 cnt()
 
+def cnt_dist():
+    #cnt = sum(df['quantity'])
+    cnt = int(len(set(df['id']))-1)
+    #cnt = int(len(df['id']))
+    return cnt
+cnt_dist()
+
 #costam = np.unique(df, return_counts=True)
 
-st.write(f"Mamy **{cnt()}** samochodzików")
+st.write(f"Mamy **{cnt_dist()}** samochodzików")
 ti = st.text_input(label='szukaj')
 til = ti.lower()
 
@@ -55,9 +62,9 @@ if ti:
             dodmar = ma
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
-            sh.sheet1.update_cell(cnt()+3,1, ti)
-            sh.sheet1.update_cell(cnt()+3,2, ro)
-            sh.sheet1.update_cell(cnt()+3,5, dodmar)
+            sh.sheet1.update_cell(cnt()+2,1, ti)
+            sh.sheet1.update_cell(cnt()+2,2, ro)
+            sh.sheet1.update_cell(cnt()+2,5, dodmar)
            
 else:
     st.write("Sprawdźmy")
