@@ -49,7 +49,7 @@ if ti:
         ro = st.text_input(label='rocznik')
         options = set(df['marka'])
         ma = st.selectbox('marka',options)
-        if ma is none:
+        if ma == "":
             dodmar = st.text_input("Nowa marka")
         else:
             dodmar = ma
