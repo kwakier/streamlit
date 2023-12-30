@@ -39,8 +39,8 @@ def cnt_dist():
     return cnt_dist
 cnt_dist()
 
-#costam = np.unique(df, return_counts=True)
-
+costam = np.unique(df['id'], return_counts=True)
+st.write(costam)
 st.write(f"Mamy **{cnt_dist()}** samochodzików")
 ti = st.text_input(label='szukaj')
 til = ti.lower()
