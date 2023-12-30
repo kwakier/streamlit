@@ -47,8 +47,8 @@ if ti:
     else:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
-        options = set(df['marka'])
-        ma = st.selectbox('marka',options + ["Dodaj marke..."])
+        options = set(df['marka']) + ["Dodaj marke..."]
+        ma = st.selectbox('marka',options)
         if ma == "Dodaj marke...":
             dodmar = st.text_input("Nowa marka")
         else:
