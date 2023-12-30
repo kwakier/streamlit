@@ -38,7 +38,7 @@ cnt()
 
 st.write(f"Mamy **{cnt()}** samochodzików")
 options = list(set(df['marka']))
-ma = st.selectbox(label='markaa',("Email", "Home phone", "Mobile phone"))
+ma = st.selectbox('markaa',options)
 ti = st.text_input(label='szukaj')
 til = ti.lower()
 
