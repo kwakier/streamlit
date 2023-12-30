@@ -47,7 +47,7 @@ if ti:
     else:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
-        options = list(set(df.sort_values(by=['marka'])))
+        options = list(set(df['marka']))
         ma = st.selectbox('marka',options)
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
