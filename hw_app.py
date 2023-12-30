@@ -35,10 +35,8 @@ def cnt():
 cnt()
 
 def cnt_dist():
-    #cnt = sum(df['quantity'])
-    cnt = int(len(set(df['id']))-1)
-    #cnt = int(len(df['id']))
-    return cnt
+    cnt_dist = int(len(set(df['id']))-1)
+    return cnt_dist
 cnt_dist()
 
 #costam = np.unique(df, return_counts=True)
