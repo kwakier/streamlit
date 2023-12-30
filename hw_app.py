@@ -24,7 +24,7 @@ sh = gc.open_by_key('1yi769GiV0MsO2hHCJHhQJaIL96_3wu955LZxo79hOkU')
 
 rd = sh.sheet1.get_all_records()
 
-df = pd.DataFrame(rd, columns = ['id','year','quantity'])
+df = pd.DataFrame(rd, columns = ['id','year','quantity','marka'])
 dfl = df['id'].str.lower().str[0:5]
 
 def cnt():
@@ -50,13 +50,13 @@ if ti:
         ro = st.text_input(label='rocznik')
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
-            sh.sheet1.update_cell(cnt()+1,1, ti)
-            sh.sheet1.update_cell(cnt()+1,2, ro)
+            sh.sheet1.update_cell(cnt()+2,1, ti)
+            sh.sheet1.update_cell(cnt()+2,2, ro)
            
 else:
     st.write("Sprawdźmy")
-    
-refresh = st.button("Odswiez")   
+
+refresh = st.button("Odswiez")
 if refresh:
     cnt()
 
