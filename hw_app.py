@@ -37,8 +37,6 @@ cnt()
 #costam = np.unique(df, return_counts=True)
 
 st.write(f"Mamy **{cnt()}** samochodzików")
-options = list(set(df['marka']))
-ma = st.selectbox('markaa',options)
 ti = st.text_input(label='szukaj')
 til = ti.lower()
 
@@ -49,6 +47,8 @@ if ti:
     else:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
+        options = list(set(df.sort_values(by=['marka'])))
+        ma = st.selectbox('marka',options)
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
