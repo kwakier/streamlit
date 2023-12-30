@@ -49,7 +49,9 @@ if ti:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
         options = list(set(df['marka']))
-        ma = st.selectbox(label='markaa', ("Email", "Home phone", "Mobile phone"))
+        ma = st.selectbox(
+            label='markaa',
+            ("Email", "Home phone", "Mobile phone"))
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
