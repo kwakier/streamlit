@@ -49,10 +49,10 @@ if ti:
         ro = st.text_input(label='rocznik')
         options = set(df['marka'])
         ma = st.selectbox('marka',options)
-        if ma == "TH":
-            dodmar = st.text_input("Nowa marka")
-        else:
+        if ma is not none:
             dodmar = ma
+        else:
+            dodmar = st.text_input("Nowa marka")
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
