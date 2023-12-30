@@ -57,7 +57,7 @@ if ti:
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+3,1, ti)
             sh.sheet1.update_cell(cnt()+3,2, ro)
-            sh.sheet1.update_cell(cnt()+3,4, dodmar)
+            sh.sheet1.update_cell(cnt()+3,5, dodmar)
            
 else:
     st.write("Sprawdźmy")
