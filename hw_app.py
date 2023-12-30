@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from collections import Counter
+from streamlit_extras.no_default_selectbox import selectbox
 
 credentials = {
     "type": "service_account",
@@ -48,11 +49,11 @@ if ti:
         st.write("Kupujemy!")
         ro = st.text_input(label='rocznik')
         options = list(set(df['marka']))
-        ma = st.selectbox('marka',options)
-        if ma:
-            dodmar = ma
-        else:
+        ma = selectbox('marka',options)
+        if ma is none:
             dodmar = st.text_input("Nowa marka")
+        else:
+            dodmar = ma            
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
             sh.sheet1.update_cell(cnt()+2,1, ti)
