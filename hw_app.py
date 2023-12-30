@@ -28,20 +28,13 @@ df = pd.DataFrame(rd, columns = ['id','year','quantity','marka'])
 dfl = df['id'].str.lower().str[0:5]
 
 def cnt():
-    cnt = sum(df['quantity'])
-    #cnt = int(len(set(df['id']))-1)
+    #cnt = sum(df['quantity'])
+    cnt = int(len(set(df['id']))-1)
     #cnt = int(len(df['id']))
     return cnt
 cnt()
 
-def cnt_dist():
-    cnt_dist = int(len(set(df['id']))-1)
-    return cnt_dist
-cnt_dist()
-
-costam = np.unique(df['id'], return_counts=True)
-st.write(costam)
-st.write(f"Mamy **{cnt_dist()}** samochodzików")
+st.write(f"Mamy **{cnt()}** samochodzików")
 ti = st.text_input(label='szukaj')
 til = ti.lower()
 
