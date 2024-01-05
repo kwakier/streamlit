@@ -53,9 +53,9 @@ if ti:
             dodmar = ma
         dodaj_hw = st.button("Dodaj")
         if dodaj_hw:
-            sh.sheet1.update_cell(cnt()+3,1, ti)
-            sh.sheet1.update_cell(cnt()+3,2, ro)
-            sh.sheet1.update_cell(cnt()+3,5, dodmar)
+            sh.sheet1.update_cell(cnt()+2,1, ti)
+            sh.sheet1.update_cell(cnt()+2,2, ro)
+            sh.sheet1.update_cell(cnt()+2,5, dodmar)
            
 else:
     st.write("Sprawdźmy")
