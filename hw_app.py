@@ -1,7 +1,7 @@
 import gspread
 import streamlit as st
 import pandas as pd
-import numpy as np
+import numpy==1.20.3 as np
 from collections import Counter
 
 credentials = {
