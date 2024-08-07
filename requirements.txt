@@ -1,5 +1,6 @@
 pandas
 streamlit
+numpy
 git+https://github.com/streamlit/gsheets-connection
 git+https://github.com/aiguofer/gspread-pandas
 #git+https://github.com/python/cpython/tree/3.12/Lib/collections
