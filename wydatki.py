@@ -19,10 +19,10 @@ credentials = {
 
 gc = gspread.service_account_from_dict(credentials)
 
-sh = gc.open_by_key('1yi769GiV0MsO2hHCJHhQJaIL96_3wu955LZxo79hOkU')
+sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
-df = pd.DataFrame(rd, columns = ['id','year','quantity','marka'])
-#'Kategoria','Kwota','Data','Uwagi'
+df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi'])
+
 df
