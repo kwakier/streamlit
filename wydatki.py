@@ -50,5 +50,4 @@ if dodaj:
     sh.sheet1.update_cell(cnt()+2,3, kwo)
     sh.sheet1.update_cell(cnt()+2,4, today)
     sh.sheet1.update_cell(cnt()+2,5, uwa)
-today
 df
