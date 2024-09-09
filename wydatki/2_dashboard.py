@@ -1,3 +1,3 @@
 import streamlit as st
 
-print 'hejo'
+st.write('hejo')
