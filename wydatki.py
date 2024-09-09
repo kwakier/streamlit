@@ -25,4 +25,11 @@ rd = sh.sheet1.get_all_records()
 
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi'])
 
+options = set(df['Kategoria'])
+kat = st.selectbox("Kategoria",options)
+kwo = st.number_input(label='Kwota')
+dat = st.date_input(label='Data',format="YYYY/MM/DD"),
+uwa = st.text_input(label='Uwagi')
+if kat == "Dodaj":
+    dodkat = st.text_input("Nowa kategoria")
 df
