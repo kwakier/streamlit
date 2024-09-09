@@ -41,9 +41,9 @@ else:
     dodkat = kat
 dodaj = st.button("Dodaj")
 if dodaj:
+    sh.sheet1.update_cell(cnt()+2,1, cnt()+2)
     sh.sheet1.update_cell(cnt()+2,2, dodkat)
     sh.sheet1.update_cell(cnt()+2,3, kwo)
     sh.sheet1.update_cell(cnt()+2,4, dat)
     sh.sheet1.update_cell(cnt()+2,5, uwa)
-    sh.sheet1.update_cell(cnt()+2,5, {cnt()+2})
 df
