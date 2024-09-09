@@ -31,7 +31,7 @@ def cnt():
     return cnt
 cnt()
 
-today = datetime.now()
+today = datetime.datetime.now()
 options = set(df['Kategoria'])
 kat = st.selectbox("Kategoria",options)
 kwo = st.number_input(label='Kwota')
