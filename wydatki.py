@@ -31,12 +31,10 @@ def cnt():
     return cnt
 cnt()
 
-today = datetime.datetime.now()
+today = datetime.datetime.now().strftime('%Y-%m-%d')
 options = set(df['Kategoria'])
 kat = st.selectbox("Kategoria",options)
 kwo = st.number_input(label='Kwota')
-#da = st.text_input(label='Data'),
-#dat = st.date_input(label='Data',format="YYYY-MM-DD"),
 uwa = st.text_input(label='Uwagi')
 if kat == "Dodaj":
     dodkat = st.text_input("Nowa kategoria")
