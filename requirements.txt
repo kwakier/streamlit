@@ -1,6 +1,6 @@
-numpy==1.23.0
+numpy
 pandas
-streamlit==1.32.0
+streamlit
 git+https://github.com/streamlit/gsheets-connection
 git+https://github.com/aiguofer/gspread-pandas
 #git+https://github.com/python/cpython/tree/3.12/Lib/collections
