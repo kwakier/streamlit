@@ -31,4 +31,4 @@ df['Data'] = pd.to_datetime(df['Data'])
  = df.groupby([df['Data'].dt.month, 'Kategoria'])['Kwota'].sum().reset_index()
 
 st.title("Wydatki miesięcznie")
-st.dataframe(monthly_sales,index=False)
+st.dataframe(monthly_sales)
