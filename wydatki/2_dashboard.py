@@ -29,5 +29,5 @@ df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 df['Data'] = pd.to_datetime(df['Data'])
 
 monthly_sales = df.groupby([df['Data'].dt.month, 'Kategoria'])['Kwota'].sum().reset_index()
-
-monthly_sales.style.hide(axis="index")
+ms = monthly_sales.style.hide(axis="index")
+ms
