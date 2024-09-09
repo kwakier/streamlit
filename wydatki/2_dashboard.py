@@ -28,7 +28,7 @@ df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'],index=
 
 df['Data'] = pd.to_datetime(df['Data'])
 
- = df.groupby([df['Data'].dt.month, 'Kategoria'])['Kwota'].sum().reset_index()
+monthly_sales = df.groupby([df['Data'].dt.month, 'Kategoria'])['Kwota'].sum().reset_index()
 
 st.title("Wydatki miesięcznie")
-st.dataframe(monthly_sales)
+st.dataframe(monthly_sales,index=False)
