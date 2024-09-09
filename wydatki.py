@@ -23,7 +23,7 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
-df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi'])
+df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 
 def cnt():
     cnt = int(len(set(df['id'])))
