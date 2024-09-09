@@ -33,7 +33,7 @@ cnt()
 options = set(df['Kategoria'])
 kat = st.selectbox("Kategoria",options)
 kwo = st.number_input(label='Kwota')
-dat = st.date_input(label='Data',format="YYYY/MM/DD"),
+dat = st.date_input(label='Data',format="YYYY-MM-DD"),
 uwa = st.text_input(label='Uwagi')
 if kat == "Dodaj":
     dodkat = st.text_input("Nowa kategoria")
@@ -41,7 +41,7 @@ else:
     dodkat = kat
 dodaj = st.button("Dodaj")
 if dodaj:
-    sh.sheet1.update_cell(cnt()+2,1, cnt()+2)
+    sh.sheet1.update_cell(cnt()+2,1, cnt()+1)
     sh.sheet1.update_cell(cnt()+2,2, dodkat)
     sh.sheet1.update_cell(cnt()+2,3, kwo)
     sh.sheet1.update_cell(cnt()+2,4, dat)
