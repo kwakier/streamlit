@@ -41,6 +41,9 @@ if kat == "Dodaj":
 else:
     dodkat = kat
 dodaj = st.button("Dodaj")
+refresh = st.button("Odswiez")
+if refresh:
+    cnt()
 if dodaj:
     sh.sheet1.update_cell(cnt()+2,1, cnt()+1)
     sh.sheet1.update_cell(cnt()+2,2, dodkat)
