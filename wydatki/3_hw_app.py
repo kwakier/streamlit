@@ -8,7 +8,7 @@ credentials = {
     "type": "service_account",
     "project_id": "hwcollection",
     "private_key_id": "98c43b47b3718e490d5de0ce5c47c27435cff42a",
-    "private_key": st.secrets["db_username"],
+    "private_key": st.secrets["GS_TOKEN"],
     "client_email": "hw-873@hwcollection.iam.gserviceaccount.com",
     "client_id": "106471154499014422504",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
