@@ -46,9 +46,13 @@ filtered_df = df[(df['Month'] == mth) & (df['Year'] == year) & (df['Kategoria'] 
 # Group the filtered DataFrame by sales type and calculate the total sales value
 grouped_df = filtered_df.groupby('Kategoria')['Kwota'].sum()
 
-# Create a bar plot
-plt.bar(grouped_df.index, grouped_df.values)
-plt.xlabel('Typ wydatku')
-plt.ylabel('Suma wydatku')
-plt.title(f'Wydatki dla mth year - kat')
-plt.show()
+t.bar_chart(grouped_df)
+
+# Set the x-axis label
+st.xlabel('Typ wydatku')
+
+# Set the y-axis label
+st.ylabel('Suma wydatków')
+
+# Set the chart title
+st.title(f'Wydatki dla mth year - kat')
