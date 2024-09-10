@@ -26,8 +26,9 @@ rd = sh.sheet1.get_all_records()
 
 df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 
-df['Data'] = pd.to_datetime(df['Data'])
+df['Month'] = pd.DatetimeIndex(df['Data']).month
+df['Year'] = pd.DatetimeIndex(df['Data']).year
 
-monthly_sales = df.groupby([df['Data'].dt.year, df['Data'].dt.month, 'Kategoria'], as_index=False)['Kwota'].sum().reset_index()
+monthly_sales = df.groupby([df['Month'], df['Year'], 'Kategoria'], as_index=False)['Kwota'].sum().reset_index()
 
 monthly_sales
