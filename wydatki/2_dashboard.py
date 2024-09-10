@@ -24,10 +24,10 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
-df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'],index=False)
+df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 
 df['Data'] = pd.to_datetime(df['Data'])
 
-monthly_sales = df.groupby([df['Data'].dt.month, 'Kategoria'])['Kwota'].sum().reset_index()
+monthly_sales = df.groupby([datetime.date(1900, df['Data'].dt.month, 1).strftime('%B'), 'Kategoria'])['Kwota'].sum().reset_index()
 
 monthly_sales
