@@ -30,5 +30,6 @@ df['Month'] = pd.DatetimeIndex(df['Data']).month
 df['Year'] = pd.DatetimeIndex(df['Data']).year
 
 monthly_sales = df.groupby([df['Month'], df['Year'], 'Kategoria'])['Kwota'].sum().reset_index()
-
+monthly_sales_total = df.groupby([df['Month'], df['Year']])['Kwota'].sum().reset_index()
 monthly_sales
+monthly_sales_total
