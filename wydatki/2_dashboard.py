@@ -42,4 +42,5 @@ kat = st.multiselect("Kategoria",options_kat)
 mth = st.multiselect("Month",options_month)
 year = st.multiselect("Year",options_year)
 
-st.line_chart(df_chart, columns = ['Kategoria','Kwota','Data'])
+# Create the bar chart
+st.bar_chart(df_chart['Kwota'])
