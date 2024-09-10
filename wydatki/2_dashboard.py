@@ -25,7 +25,7 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 rd = sh.sheet1.get_all_records()
 
 df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
-df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi'])
+df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data'])
 
 df['Month'] = pd.DatetimeIndex(df['Data']).month
 df['Year'] = pd.DatetimeIndex(df['Data']).year
@@ -42,4 +42,4 @@ kat = st.multiselect("Kategoria",options_kat)
 mth = st.multiselect("Month",options_month)
 year = st.multiselect("Year",options_year)
 
-st.line_chart(df_chart)
+st.line_chart(df_chart, columns = ['Kategoria','Kwota','Data'])
