@@ -28,6 +28,6 @@ df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 
 df['Data'] = pd.to_datetime(df['Data'])
 
-monthly_sales = df.groupby([df['Data'].dt.month, 'Kategoria'])['Kwota'].sum().reset_index()
+monthly_sales = df.groupby([datetime.date(1900, df['Data'].dt.month, 1).strftime('%B'), 'Kategoria'])['Kwota'].sum().reset_index()
 
 monthly_sales
