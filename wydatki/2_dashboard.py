@@ -27,7 +27,7 @@ rd = sh.sheet1.get_all_records()
 
 df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 
-df['Month'] = pd.DatetimeIndex(df['Data'],locale='pt_BR.utf8').month_name
+df['Month'] = pd.DatetimeIndex(df['Data'], locale='pl_PL.utf8').month_name
 df['Year'] = pd.DatetimeIndex(df['Data']).year
 
 monthly_expenses = df.groupby([df['Month'], df['Year'], 'Kategoria'])['Kwota'].sum().reset_index()
