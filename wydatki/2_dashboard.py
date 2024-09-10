@@ -26,6 +26,8 @@ rd = sh.sheet1.get_all_records()
 
 df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data'])
+filtered_df_chart = df_chart.loc[(df['Kategoria'] != "Dodaj")]
+
 
 df['Month'] = pd.DatetimeIndex(df['Data']).month
 df['Year'] = pd.DatetimeIndex(df['Data']).year
@@ -43,4 +45,4 @@ mth = st.multiselect("Month",options_month)
 year = st.multiselect("Year",options_year)
 
 # Create the bar chart
-st.bar_chart(df_chart, x="Kategoria", y="Kwota")
+st.bar_chart(filtered_df_chart, x="Kategoria", y="Kwota")
