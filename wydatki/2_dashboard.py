@@ -37,4 +37,4 @@ monthly_expenses_total
 options_kat = set(df['Kategoria'])
 options_month = set(df['Month'])
 kat = st.multiselect("Kategoria",options_kat)
-kat = st.multiselect("Kategoria",options_kat)
+mth = st.multiselect("Kategoria",options_month)
