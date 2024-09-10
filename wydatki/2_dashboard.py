@@ -44,8 +44,8 @@ year = st.multiselect("Year",options_year)
 filtered_df = df[(df['Month'] == mth) & (df['Year'] == year) & (df['Kategoria'] == kat)]
 
 # Group the filtered DataFrame by sales type and calculate the total sales value
-grouped_df = filtered_df.groupby('Kategoria')['Kwota'].sum().reset_index()
-
+grouped_df = filtered_df.groupby('Kategoria')['Kwota'].sum()
+grouped_df
 t.bar_chart(grouped_df)
 
 # Set the x-axis label
