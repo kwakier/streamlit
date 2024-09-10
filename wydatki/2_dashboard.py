@@ -42,7 +42,7 @@ mth = st.multiselect("Month",options_month)
 year = st.multiselect("Year",options_year)
 
 filtered_df = df[(df['Month'] == mth) & (df['Year'] == year) & (df['Kategoria'] == kat)]
-
+filtered_df
 # Group the filtered DataFrame by sales type and calculate the total sales value
 grouped_df = filtered_df.groupby('Kategoria')['Kwota'].sum()
 grouped_df
