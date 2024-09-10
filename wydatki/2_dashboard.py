@@ -29,6 +29,6 @@ df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 df['Month'] = pd.DatetimeIndex(df['Data']).month
 df['Year'] = pd.DatetimeIndex(df['Data']).year
 
-monthly_sales = df.groupby([df['Month'], df['Year'], 'Kategoria'], hide_index=False)['Kwota'].sum().reset_index()
+monthly_sales = df.groupby([df['Month'], df['Year'], 'Kategoria'], hide_index=True)['Kwota'].sum().reset_index()
 
 monthly_sales
