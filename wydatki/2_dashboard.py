@@ -27,10 +27,15 @@ rd = sh.sheet1.get_all_records()
 
 df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
 
-df['Month'] = pd.DatetimeIndex(df['Data']).month
+df['Month'] = pd.DatetimeIndex(df['Data'],locale='pt_BR.utf8').month_name
 df['Year'] = pd.DatetimeIndex(df['Data']).year
 
 monthly_expenses = df.groupby([df['Month'], df['Year'], 'Kategoria'])['Kwota'].sum().reset_index()
 monthly_expenses_total = df.groupby([df['Month'], df['Year']])['Kwota'].sum().reset_index()
 monthly_expenses
 monthly_expenses_total
+
+options_kat = set(df['Kategoria'])
+options_month = set(df['Month'])
+kat = st.multiselect("Kategoria",options_kat)
+kat = st.multiselect("Kategoria",options_kat)
