@@ -1,4 +1,4 @@
-import datetime
+rimport datetime
 import gspread
 import streamlit as st
 import pandas as pd
@@ -36,7 +36,7 @@ monthly_expenses_total
 
 options_kat = set(df['Kategoria'])
 options_month = set(df['Month'])
-options_year = set(df['Month'])
+options_year = set(df['Year'])
 kat = st.multiselect("Kategoria",options_kat)
 mth = st.multiselect("Month",options_month)
 year = st.multiselect("Year",options_year)
@@ -44,7 +44,7 @@ year = st.multiselect("Year",options_year)
 filtered_df = df[(df['Month'] == mth) & (df['Year'] == year) & (df['Kategoria'] == kat)]
 
 # Group the filtered DataFrame by sales type and calculate the total sales value
-grouped_df = filtered_df.groupby('Kategoria')['Kwota'].sum()
+grouped_df = filtered_df.groupby([df['Kategoria'])['Kwota'].sum().reset_index()
 
 t.bar_chart(grouped_df)
 
