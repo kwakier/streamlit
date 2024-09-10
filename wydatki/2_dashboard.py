@@ -3,6 +3,7 @@ import gspread
 import streamlit as st
 import pandas as pd
 import numpy as np
+import pyplot as plt
 
 credentials = {
     "type": "service_account",
@@ -36,5 +37,19 @@ monthly_expenses_total
 
 options_kat = set(df['Kategoria'])
 options_month = set(df['Month'])
+options_year = set(df['Month'])
 kat = st.multiselect("Kategoria",options_kat)
-mth = st.multiselect("Kategoria",options_month)
+mth = st.multiselect("Month",options_month)
+year = st.multiselect("Year",options_year)
+
+filtered_df = df[(df['Month'] == mth) & (df['Year'] == year) & (df['Kategoria'] == kat)]
+
+# Group the filtered DataFrame by sales type and calculate the total sales value
+grouped_df = filtered_df.groupby('Kategoria')['Kwota'].sum()
+
+# Create a bar plot
+plt.bar(grouped_df.index, grouped_df.values)
+plt.xlabel('Typ wydatku')
+plt.ylabel('Suma wydatku')
+plt.title(f'Wydatki dla mth year - kat')
+plt.show()
