@@ -41,4 +41,4 @@ kat = st.multiselect("Kategoria",options_kat)
 mth = st.multiselect("Month",options_month)
 year = st.multiselect("Year",options_year)
 
-t.bar_chart(monthly_expenses_total)
+st.bar_chart(monthly_expenses_total)
