@@ -41,18 +41,4 @@ kat = st.multiselect("Kategoria",options_kat)
 mth = st.multiselect("Month",options_month)
 year = st.multiselect("Year",options_year)
 
-filtered_df = df[(df['Month'] == mth) & (df['Year'] == year) & (df['Kategoria'] == kat)]
-filtered_df
-# Group the filtered DataFrame by sales type and calculate the total sales value
-grouped_df = filtered_df.groupby('Kategoria')['Kwota'].sum()
-grouped_df
-t.bar_chart(grouped_df)
-
-# Set the x-axis label
-st.xlabel('Typ wydatku')
-
-# Set the y-axis label
-st.ylabel('Suma wydatków')
-
-# Set the chart title
-st.title(f'Wydatki dla mth year - kat')
+t.bar_chart(monthly_expenses_total)
