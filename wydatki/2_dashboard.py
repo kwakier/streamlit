@@ -24,9 +24,12 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
+today = datetime.datetime.now()
+
 df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi','yyyymm'])
 df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','yyyymm'])
 filtered_df_chart = df_chart.loc[(df['Kategoria'] != "Dodaj")]
+filtered_df_today = df_chart.loc[(df['Data'] == today)]
 
 df['Month'] = pd.DatetimeIndex(df['Data']).month
 df['Year'] = pd.DatetimeIndex(df['Data']).year
