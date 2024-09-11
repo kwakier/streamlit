@@ -40,7 +40,7 @@ filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
 filtered_df_today = df.loc[(df['Data'] == today)]
 st.write("Dzisiejsze wydatki")
 filtered_df_today_subet = filtered_df_today[["Kategoria","Kwota","Data","Uwagi"]]
-filtered_df_today_subet.head()
+filtered_df_today_subet
 
 filtered_df_current_week = df.loc[~(df['data_int'].astype(int) >= todayint) & (df['data_int'].astype(int) <= last_monday) & (df['data_int'].astype(int) > 0)]
 st.write("Bieżący tydzień")
