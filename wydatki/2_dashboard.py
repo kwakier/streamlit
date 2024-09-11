@@ -24,7 +24,7 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
-df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi'])
+df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi','yyyymm'])
 df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','yyyymm'])
 filtered_df_chart = df_chart.loc[(df['Kategoria'] != "Dodaj")]
 
@@ -33,17 +33,17 @@ df['Year'] = pd.DatetimeIndex(df['Data']).year
 df_chart['Month'] = pd.DatetimeIndex(df['Data']).month
 df_chart['Year'] = pd.DatetimeIndex(df['Data']).year
 
-monthly_expenses = df.groupby([df['Month'], df['Year'], 'Kategoria'])['Kwota'].sum().reset_index()
-monthly_expenses_total = df.groupby([df['Month'], df['Year']])['Kwota'].sum().reset_index()
+monthly_expenses = df.groupby([df['yyyymm'], 'Kategoria'])['Kwota'].sum().reset_index()
+monthly_expenses_total = df.groupby([df['yyyymm']])['Kwota'].sum().reset_index()
 monthly_expenses
 monthly_expenses_total
 
-options_kat = set(df['Kategoria'])
-options_month = set(df['Month'])
-options_year = set(df['Year'])
-kat = st.multiselect("Kategoria",options_kat)
-mth = st.multiselect("Month",options_month)
-year = st.multiselect("Year",options_year)
+#options_kat = set(df['Kategoria'])
+#options_month = set(df['Month'])
+#options_year = set(df['Year'])
+#kat = st.multiselect("Kategoria",options_kat)
+#mth = st.multiselect("Month",options_month)
+#year = st.multiselect("Year",options_year)
 
 # Create the bar chart
 st.line_chart(filtered_df_chart, x="Kategoria", y="Kwota", color="yyyymm")
