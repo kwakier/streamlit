@@ -24,21 +24,20 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
-#today = datetime.datetime.now().strftime("%Y-%m-%d")
-today = datetime.date.today()
-
+today = datetime.datetime.now().strftime("%Y-%m-%d")
+today_is = datetime.date.today()
+today_week_day = datetime.datetime.now().strftime("%w")
+today
+today_is
+today_week_day
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm'])
-#df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','yyyymm'])
 
 filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
 
 filtered_df_today = df.loc[(df['Data'] == today)]
 filtered_df_today 
 
-#df['Month'] = pd.DatetimeIndex(df['Data']).month
-#df['Year'] = pd.DatetimeIndex(df['Data']).year
-#df_chart['Month'] = pd.DatetimeIndex(df['Data']).month
-#df_chart['Year'] = pd.DatetimeIndex(df['Data']).year
+filtered_df_current_week = df.loc[(df['Data'] >= today) & (df['Data'] >= today)]
 
 monthly_expenses = df.groupby([df['yyyymm'], 'Kategoria'])['Kwota'].sum().reset_index()
 monthly_expenses_total = df.groupby([df['yyyymm']])['Kwota'].sum().reset_index()
