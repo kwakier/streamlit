@@ -30,8 +30,10 @@ def get_last_monday():
     return last_monday.date()
 
 last_monday = int(get_last_monday().strftime("%Y%m%d"))
-todayis = int(datetime.today().strftime("%Y%m%d"))
+todayint = int(datetime.today().strftime("%Y%m%d"))
 today = datetime.today().strftime("%Y-%m-%d")
+last_monday
+todayint
 
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm','data_int'])
 
@@ -40,7 +42,7 @@ filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
 filtered_df_today = df.loc[(df['Data'] == today)]
 filtered_df_today 
 
-filtered_df_current_week = df.loc[(df['data_int'].astype(int) >= todayis)]
+filtered_df_current_week = df.loc[(df['data_int'].astype(int) >= todayint)]
 filtered_df_current_week
 
 monthly_expenses = df.groupby([df['yyyymm'], 'Kategoria'])['Kwota'].sum().reset_index()
