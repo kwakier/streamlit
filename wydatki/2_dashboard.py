@@ -43,7 +43,7 @@ schema = {
 }
 df = pd.DataFrame(rd, columns=schema).astype(schema)
 
-#df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm','data_int': int()])
+#df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm','data_int'])
 
 filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
 
