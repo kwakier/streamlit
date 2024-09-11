@@ -24,7 +24,7 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
-today = datetime.datetime.now()
+today = datetime.datetime.now().strftime("%Y-%m-%d")
 
 df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi','yyyymm'])
 df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','yyyymm'])
