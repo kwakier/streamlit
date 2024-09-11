@@ -33,7 +33,17 @@ last_monday = int(get_last_monday().strftime("%Y%m%d"))
 todayis = int(datetime.today().strftime("%Y%m%d"))
 today = datetime.today().strftime("%Y-%m-%d")
 
-df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm','data_int': int()])
+schema = {
+    'Kategoria' : str, 
+    'Kwota': str,
+    'Data': str,
+    'Uwagi': str,
+    'yyyymm': str,
+    'data_int': int,
+}
+df = pd.DataFrame(rd, columns=schema).astype(schema)
+
+#df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm','data_int': int()])
 
 filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
 
