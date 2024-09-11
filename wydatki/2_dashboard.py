@@ -30,7 +30,7 @@ def get_last_monday():
     return last_monday.date()
 
 last_monday = get_last_monday().strftime("%Y-%m-%d")
-today = datetime.datetime.now().strftime("%Y-%m-%d")
+today = datetime.today().strftime("%Y-%m-%d")
 
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm'])
 
