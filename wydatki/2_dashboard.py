@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime, timedelta
 import gspread
 import streamlit as st
 import pandas as pd
