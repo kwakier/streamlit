@@ -27,7 +27,7 @@ rd = sh.sheet1.get_all_records()
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 today_week_day = datetime.datetime.now().strftime("%w")
 today
-monday = datetime.datetime.now().day - today_week_day
+monday = datetime.datetime.now().day - int(today_week_day)
 monday
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm'])
 
