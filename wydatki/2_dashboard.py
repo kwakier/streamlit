@@ -35,17 +35,22 @@ today = datetime.today().strftime("%Y-%m-%d")
 last_monday
 todayint
 
+
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm','data_int'])
 
 filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
 
 filtered_df_today = df.loc[(df['Data'] == today)]
+st.write("Dzisiejsze wydatki")
 filtered_df_today 
 
 filtered_df_current_week = df.loc[(df['data_int'].astype(int) >= todayint)]
+st.write("Bieżący tydzień")
 filtered_df_current_week
 
+st.write("Wydatki w miesiącu na kategorie")
 monthly_expenses = df.groupby([df['yyyymm'], 'Kategoria'])['Kwota'].sum().reset_index()
+st.write("Suma wydatków w miesiącu")
 monthly_expenses_total = df.groupby([df['yyyymm']])['Kwota'].sum().reset_index()
 
 monthly_expenses.loc[(df['Kategoria'] != "Dodaj")]
