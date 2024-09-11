@@ -40,6 +40,7 @@ filtered_df_today = df.loc[(df['Data'] == today)]
 filtered_df_today 
 
 filtered_df_current_week = df.loc[(df['Data'] >= today) & (df['Data'] <= last_monday)]
+filtered_df_current_week
 
 monthly_expenses = df.groupby([df['yyyymm'], 'Kategoria'])['Kwota'].sum().reset_index()
 monthly_expenses_total = df.groupby([df['yyyymm']])['Kwota'].sum().reset_index()
