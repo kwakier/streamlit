@@ -45,7 +45,6 @@ monthly_expenses_total = df.groupby([df['yyyymm']])['Kwota'].sum().reset_index()
 monthly_expenses.loc[(df['Kategoria'] != "Dodaj")]
 monthly_expenses_total.loc[(df['Kategoria'] != "Dodaj")]
 
-
 #options_kat = set(df['Kategoria'])
 #options_month = set(df['Month'])
 #options_year = set(df['Year'])
@@ -53,5 +52,4 @@ monthly_expenses_total.loc[(df['Kategoria'] != "Dodaj")]
 #mth = st.multiselect("Month",options_month)
 #year = st.multiselect("Year",options_year)
 
-# Create the bar chart
 st.line_chart(filtered_df_chart, x="Kategoria", y="Kwota", color="yyyymm")
