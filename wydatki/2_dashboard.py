@@ -25,11 +25,10 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 rd = sh.sheet1.get_all_records()
 
 today = datetime.datetime.now().strftime("%Y-%m-%d")
-today_is = datetime.date.today()
 today_week_day = datetime.datetime.now().strftime("%w")
 today
-today_is
-today_week_day
+monday = today - datetime.timedelta(days=today_week_day)
+monday
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm'])
 
 filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
