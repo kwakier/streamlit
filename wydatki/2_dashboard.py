@@ -44,16 +44,17 @@ filtered_df_today = df.loc[(df['Data'] == today)]
 st.write("Dzisiejsze wydatki")
 filtered_df_today 
 
-filtered_df_current_week = df.loc[(df['data_int'].astype(int) >= todayint)]
+filtered_df_current_week = df.loc[(df['data_int'].astype(int) >= todayint) & (df['data_int'].astype(int) <= last_monday)]
 st.write("Bieżący tydzień")
 filtered_df_current_week
 
-st.write("Wydatki w miesiącu na kategorie")
 monthly_expenses = df.groupby([df['yyyymm'], 'Kategoria'])['Kwota'].sum().reset_index()
-st.write("Suma wydatków w miesiącu")
 monthly_expenses_total = df.groupby([df['yyyymm']])['Kwota'].sum().reset_index()
 
+st.write("Wydatki w miesiącu na kategorie")
 monthly_expenses.loc[(df['Kategoria'] != "Dodaj")]
+
+st.write("Suma wydatków w miesiącu")
 monthly_expenses_total.loc[(df['Kategoria'] != "Dodaj")]
 
 #options_kat = set(df['Kategoria'])
