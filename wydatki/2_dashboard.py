@@ -26,12 +26,12 @@ rd = sh.sheet1.get_all_records()
 
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 
-#df = pd.DataFrame(rd, columns = ['id','Kategoria','Kwota','Data','Uwagi','yyyymm'])
-df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','yyyymm'])
+df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm'])
+#df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','yyyymm'])
 
-filtered_df_chart = df_chart.loc[(df_chart ['Kategoria'] != "Dodaj")]
+filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
 
-filtered_df_today = df_chart.loc[(df_chart ['Data'] == today)]
+filtered_df_today = df.loc[(df['Data'] == today)]
 filtered_df_today 
 
 #df['Month'] = pd.DatetimeIndex(df['Data']).month
