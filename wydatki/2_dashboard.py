@@ -31,6 +31,9 @@ filtered_df_chart = df_chart.loc[(df['Kategoria'] != "Dodaj")]
 
 df['Month'] = pd.DatetimeIndex(df['Data']).month
 df['Year'] = pd.DatetimeIndex(df['Data']).year
+df_chart['Month'] = pd.DatetimeIndex(df['Data']).month
+df_chart['Year'] = pd.DatetimeIndex(df['Data']).year
+yymm = st.text(f'df_chart['Year'] df_chart['Month']')
 
 monthly_expenses = df.groupby([df['Month'], df['Year'], 'Kategoria'])['Kwota'].sum().reset_index()
 monthly_expenses_total = df.groupby([df['Month'], df['Year']])['Kwota'].sum().reset_index()
@@ -45,4 +48,4 @@ mth = st.multiselect("Month",options_month)
 year = st.multiselect("Year",options_year)
 
 # Create the bar chart
-st.line_chart(filtered_df_chart, x="Kwota", y=["Kategoria","Month"])
+st.line_chart(filtered_df_chart, x="Kwota", y=["Kategoria",yymm])
