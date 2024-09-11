@@ -24,9 +24,6 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
-import streamlit as st
-from datetime import datetime, timedelta
-
 def get_last_monday():
     todayis = datetime.today()
     last_monday = todayis - timedelta(days=todayis.weekday())
