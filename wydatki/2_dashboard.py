@@ -42,7 +42,7 @@ filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
 filtered_df_today = df.loc[(df['Data'] == today)]
 filtered_df_today 
 
-filtered_df_current_week = df.[(df['data_int'] >= todayis) & (df['data_int'] <= last_monday)]
+filtered_df_current_week = df[(df['data_int'] >= todayis) & (df['data_int'] <= last_monday)]
 filtered_df_current_week
 
 monthly_expenses = df.groupby([df['yyyymm'], 'Kategoria'])['Kwota'].sum().reset_index()
