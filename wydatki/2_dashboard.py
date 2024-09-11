@@ -35,7 +35,7 @@ df['Year'] = pd.DatetimeIndex(df['Data']).year
 df_year = df['Year']
 df_chart['Month'] = pd.DatetimeIndex(df['Data']).month
 df_chart['Year'] = pd.DatetimeIndex(df['Data']).year
-yymm = st.text(f'df_year df_mth')
+yymm = st.text(f'{df_year} {df_mth}')
 
 monthly_expenses = df.groupby([yymm, 'Kategoria'])['Kwota'].sum().reset_index()
 monthly_expenses_total = df.groupby(yymm)['Kwota'].sum().reset_index()
