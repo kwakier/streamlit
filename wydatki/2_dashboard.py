@@ -44,7 +44,7 @@ filtered_df_today = df.loc[(df['Data'] == today)]
 st.write("Dzisiejsze wydatki")
 filtered_df_today 
 
-filtered_df_current_week = df.loc[(df['data_int'].astype(int) >= todayint) & (df['data_int'].astype(int) <= last_monday)]
+filtered_df_current_week = df.loc[~(df['data_int'].astype(int) >= todayint) & (df['data_int'].astype(int) <= last_monday)]
 st.write("Bieżący tydzień")
 filtered_df_current_week
 
