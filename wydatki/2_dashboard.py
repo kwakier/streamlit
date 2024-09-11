@@ -31,6 +31,7 @@ df_chart = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','yyyymm'])
 filtered_df_chart = df_chart.loc[(df['Kategoria'] != "Dodaj")]
 filtered_df_today = df_chart.loc[(df['Data'] == today)]
 filtered_df_today 
+
 df['Month'] = pd.DatetimeIndex(df['Data']).month
 df['Year'] = pd.DatetimeIndex(df['Data']).year
 df_chart['Month'] = pd.DatetimeIndex(df['Data']).month
@@ -38,7 +39,7 @@ df_chart['Year'] = pd.DatetimeIndex(df['Data']).year
 
 monthly_expenses = df.groupby([df['yyyymm'], 'Kategoria'])['Kwota'].sum().reset_index()
 monthly_expenses_total = df.groupby([df['yyyymm']])['Kwota'].sum().reset_index()
-##daily_expenses_total = filtered_df_today['Kwota'].sum().reset_index()
+daily_expenses_total = filtered_df_today['Kwota'].sum().reset_index()
 
 monthly_expenses.loc[(df['Kategoria'] != "Dodaj")]
 monthly_expenses_total.loc[(df['Kategoria'] != "Dodaj")]
