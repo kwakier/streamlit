@@ -24,13 +24,19 @@ sh = gc.open_by_key('1VLmAF5CrcEmMMAuDLN4z4YQ2XS4YYtBKMIVDKgtp1v4')
 
 rd = sh.sheet1.get_all_records()
 
+import streamlit as st
+from datetime import datetime, timedelta
+
+def get_last_monday():
+    todayis = datetime.today()
+    last_monday = todayis - timedelta(days=todayis.weekday())
+    return last_monday.date()
+
+last_monday = get_last_monday().strftime("%Y-%m-%d")
+last_monday
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 today_week_day = datetime.datetime.now().strftime("%w")
-today_week_day_int = int(today_week_day)-1
-today_week_day_int
-today
-monday = today.day - today_week_day_int
-monday
+
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm'])
 
 filtered_df_chart = df.loc[(df['Kategoria'] != "Dodaj")]
