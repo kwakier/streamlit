@@ -64,15 +64,15 @@ refresh = st.button("Odswiez")
 if refresh:
     cnt()
 
-dfy = df['year']
+##dfy = df['year']
 #dfy = filter(None,df['year'])
 
 #cl = Counter(dfy).keys() # equals to list(set(words))
 #cv = Counter(dfy).values() # counts the elements' frequency
 
-cl = Counter(dfy)
+##cl = Counter(dfy)
 
-cldf = pd.DataFrame.from_dict(cl, orient='index').reset_index()
+##cldf = pd.DataFrame.from_dict(cl, orient='index').reset_index()
 #cldf
 
 df
