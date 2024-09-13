@@ -42,7 +42,7 @@ st.write("Dzisiejsze wydatki")
 filtered_df_today_subet = filtered_df_today[["Kategoria","Kwota","Data","Uwagi"]]
 filtered_df_today_subet
 
-filtered_df_current_week = df.loc[~(df['data_int'].astype(int) >= todayint) & (df['data_int'].astype(int) <= last_monday) & (df['data_int'].astype(int) > todayint)]
+filtered_df_current_week = df.loc[~(df['data_int'].astype(int) >= todayint) & (df['data_int'].astype(int) <= last_monday))]
 st.write("Bieżący tydzień")
 filtered_df_current_week_subset = filtered_df_current_week[["Kategoria","Kwota","Data","Uwagi"]]
 filtered_df_current_week_subset
