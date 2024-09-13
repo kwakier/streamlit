@@ -32,6 +32,8 @@ def get_last_monday():
 last_monday = int(get_last_monday().strftime("%Y%m%d"))
 todayint = int(datetime.today().strftime("%Y%m%d"))
 today = datetime.today().strftime("%Y-%m-%d")
+last_monday
+todayint
 
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm','data_int'])
 
@@ -42,7 +44,7 @@ st.write("Dzisiejsze wydatki")
 filtered_df_today_subet = filtered_df_today[["Kategoria","Kwota","Data","Uwagi"]]
 filtered_df_today_subet
 
-filtered_df_current_week = df.loc[~(df['data_int'].astype(int) >= todayint) & (df['data_int'].astype(int) <= last_monday)]
+filtered_df_current_week = df.loc[~(df['data_int'].astype(int) >= todayint) & (df['data_int'].astype(int) <= last_monday) & (df['data_int'].astype(int) > 0)]
 st.write("Bieżący tydzień")
 #filtered_df_current_week_subset = filtered_df_current_week[["Kategoria","Kwota","Data","Uwagi"]]
 #filtered_df_current_week_subset
