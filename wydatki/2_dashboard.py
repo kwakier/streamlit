@@ -32,8 +32,6 @@ def get_last_monday():
 last_monday = int(get_last_monday().strftime("%Y%m%d"))
 todayint = int(datetime.today().strftime("%Y%m%d"))
 today = datetime.today().strftime("%Y-%m-%d")
-last_monday
-todayint
 
 df = pd.DataFrame(rd, columns = ['Kategoria','Kwota','Data','Uwagi','yyyymm','data_int'])
 
@@ -65,4 +63,4 @@ monthly_expenses_total.loc[(df['Kategoria'] != "Dodaj")]
 #mth = st.multiselect("Month",options_month)
 #year = st.multiselect("Year",options_year)
 
-st.line_chart(filtered_df_chart, x="Kategoria", y="Kwota", color="yyyymm")
+st.bar_chart(filtered_df_chart, x="Kategoria", y="Kwota", color="yyyymm")
