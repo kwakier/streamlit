@@ -29,8 +29,8 @@ st.write("Suma HW po marce")
 df_cnt = df.groupby([df['marka']])['marka'].count()
 
 dfx = pd.DataFrame(df_cnt)
-
-df_sorted = dfx.sort_values(by='marka', ascending=False)
+dfx
+#df_sorted = dfx.sort_values(by='marka', ascending=False)
 
 #df_srt = df_cnt.sort_index(axis=0, level=2, ascending=False, inplace=False, kind='quicksort', na_position='last', sort_remaining=True, ignore_index=False, key=None)
-df_srt
+
