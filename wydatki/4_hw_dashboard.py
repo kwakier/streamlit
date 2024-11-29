@@ -30,5 +30,5 @@ st.write("Dzisiejsze wydatki")
 
 df_cnt = df.groupby([df['marka']])['marka'].count()
 
-df_srt = df_cnt.sort_index(ascending=False)
+df_srt = df_cnt.sort_index(1,ascending=False)
 df_srt
