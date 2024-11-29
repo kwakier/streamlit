@@ -25,10 +25,8 @@ sh = gc.open_by_key('1yi769GiV0MsO2hHCJHhQJaIL96_3wu955LZxo79hOkU')
 rd = sh.sheet1.get_all_records()
 
 df = pd.DataFrame(rd, columns = ['id','marka'])
-
-st.write("Dzisiejsze wydatki")
-
+st.write("Suma HW po marce")
 df_cnt = df.groupby([df['marka']])['marka'].count()
 
-df_srt = df_cnt.sort_values(by='marka')
+df_srt = df_cnt.sort_index(by='marka')
 df_srt
