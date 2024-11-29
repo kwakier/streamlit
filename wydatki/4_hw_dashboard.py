@@ -30,4 +30,4 @@ st.write("Dzisiejsze wydatki")
 
 monthly_expenses = df.groupby([df['marka']])['marka'].count()
 
-monthly_expenses.sort_values(by='marka',ascending=False)
+monthly_expenses.sort_index(ascending=False)
