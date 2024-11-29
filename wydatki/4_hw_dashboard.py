@@ -28,5 +28,5 @@ df = pd.DataFrame(rd, columns = ['id','marka'])
 st.write("Suma HW po marce")
 df_cnt = df.groupby([df['marka']])['marka'].count()
 
-df_srt = df_cnt.sort_index(1, axis=0, level=1, ascending=False, inplace=False, kind='quicksort', na_position='last', sort_remaining=True, ignore_index=False, key=None)
+df_srt = df_cnt.sort_index(axis=0, level=1, ascending=False, inplace=False, kind='quicksort', na_position='last', sort_remaining=True, ignore_index=False, key=None)
 df_srt
