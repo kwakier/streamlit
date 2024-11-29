@@ -28,6 +28,7 @@ df = pd.DataFrame(rd, columns = ['id','marka'])
 
 st.write("Dzisiejsze wydatki")
 
-monthly_expenses = df.groupby([df['marka']])['marka'].count()
+df_cnt = df.groupby([df['marka']])['marka'].count()
 
-monthly_expenses.sort_index(ascending=False)
+df_srt = df_cnt.sort_index(ascending=False)
+df_srt
