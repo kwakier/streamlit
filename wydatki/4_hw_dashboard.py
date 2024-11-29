@@ -29,3 +29,5 @@ df = pd.DataFrame(rd, columns = ['id','marka'])
 st.write("Dzisiejsze wydatki")
 
 monthly_expenses = df.groupby([df['marka']])['marka'].count()
+
+monthly_expenses 
