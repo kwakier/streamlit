@@ -5,6 +5,6 @@ import streamlit as st
 hwapp = st.Page("3_hw_app.py", title="Hot Wheels", icon=":material/directions_car:")
 hwdashboard = st.Page("4_hw_dashboard.py", title="HW Dashboard", icon=":material/directions_car:")
 
-pg = st.navigation([dodaj, dashboard, hwapp, hwdashboard])
+pg = st.navigation([hwapp, hwdashboard])
 st.set_page_config(page_title="Moje appki", page_icon=":material/edit:")
 pg.run()
